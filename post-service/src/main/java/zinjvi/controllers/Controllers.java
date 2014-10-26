@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
-import zinjvi.beans.Bean;
 
 @Controller
 public class Controllers {
@@ -15,8 +14,7 @@ public class Controllers {
 
     @RequestMapping("/index")
     public String index(Model model) {
-        Bean bean = restTemplate.getForObject("http://localhost:8081/post/", Bean.class);
-        model.addAttribute("key", bean.getMessage());
+        model.addAttribute("key", "v");
         return "index";
     }
 
