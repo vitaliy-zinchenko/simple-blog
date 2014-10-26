@@ -2,7 +2,7 @@ package zinjvi.zinjvi.api;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import zinjvi.zinjvi.beans.Post;
+import zinjvi.beans.Post;
 
 @RestController
 @RequestMapping("/post")

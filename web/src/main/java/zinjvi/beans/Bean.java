@@ -1,4 +1,4 @@
-package zinjvi.zinjvi.beans;
+package zinjvi.beans;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

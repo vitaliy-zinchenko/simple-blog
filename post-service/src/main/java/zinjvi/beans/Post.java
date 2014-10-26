@@ -1,4 +1,4 @@
-package zinjvi.zinjvi.beans;
+package zinjvi.beans;
 
 /**
  * Created by zinchenko on 25.10.14.
