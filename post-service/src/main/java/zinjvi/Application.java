@@ -1,4 +1,4 @@
-package zinjvi.zinjvi;
+package zinjvi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -9,7 +9,12 @@ import org.springframework.context.annotation.ImportResource;
 /**
  * Created by zinchenko on 25.10.14.
  */
-@ComponentScan(basePackages = {"/zinjvi/controllers", "/zinjvi"})
+@ComponentScan(basePackages = {
+//        "/zinjvi/controller",
+//        "/zinjvi/api",
+//        "/zinjvi/repository",
+//        "/zinjvi/service/impl",
+        "/zinjvi"})
 @EnableAutoConfiguration
 public class Application {
 

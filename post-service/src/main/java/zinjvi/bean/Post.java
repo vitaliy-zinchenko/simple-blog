@@ -1,19 +1,19 @@
-package zinjvi.beans;
+package zinjvi.bean;
 
 /**
  * Created by zinchenko on 25.10.14.
  */
 public class Post {
 
-    private Long id;
+    private String id;
 
     private String message;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

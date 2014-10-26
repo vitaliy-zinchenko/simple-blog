@@ -1,4 +1,4 @@
-package zinjvi.controllers;
+package zinjvi.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,8 +9,8 @@ import org.springframework.web.client.RestTemplate;
 @Controller
 public class Controllers {
 
-    @Autowired
-    private RestTemplate restTemplate;
+//    @Autowired
+//    private RestTemplate restTemplate;
 
     @RequestMapping("/index")
     public String index(Model model) {
@@ -18,11 +18,11 @@ public class Controllers {
         return "index";
     }
 
-    public RestTemplate getRestTemplate() {
-        return restTemplate;
-    }
-
-    public void setRestTemplate(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
+//    public RestTemplate getRestTemplate() {
+//        return restTemplate;
+//    }
+//
+//    public void setRestTemplate(RestTemplate restTemplate) {
+//        this.restTemplate = restTemplate;
+//    }
 }

@@ -12,6 +12,9 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <org.mongodb.version>2.12.4</org.mongodb.version>
+    <org.springframework.version>4.1.1.RELEASE</org.springframework.version>
+    <org.hibernate.version>4.3.6.Final</org.hibernate.version>
   </properties>
 
     <parent>
@@ -54,6 +57,17 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
+        <dependency>
+            <groupId>zinjvi</groupId>
+            <artifactId>crud</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>${org.mongodb.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
