@@ -20,6 +20,6 @@ public class Application {
 }
 
 @Configuration
-@ImportResource("/context.xml")
+@ImportResource("classpath:/context.xml")
 class XmlImportingConfiguration {
 }

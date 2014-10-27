@@ -3,7 +3,12 @@ package zinjvi.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import zinjvi.bean.Comment;
+import zinjvi.bean.Post;
 import zinjvi.service.PostService;
 
 /**
@@ -13,6 +18,7 @@ import zinjvi.service.PostService;
 @RequestMapping("/post")
 public class PostController {
 
+
     @Autowired
     private PostService postService;
 
@@ -20,6 +26,30 @@ public class PostController {
     public String index(Model model) {
         model.addAttribute("posts", postService.findAll());
         return "index";
+    }
+
+    @RequestMapping("/createComment")
+    public String create(@ModelAttribute Post post, @ModelAttribute  String postId) {
+        postService.save(post);
+        return "redirect:/post/index";
+    }
+
+    @RequestMapping("/test")
+    @ResponseBody
+    public Post test() {
+        Post post = new Post();
+        post.setMessage("m_" + System.currentTimeMillis());
+
+        Comment comment = new Comment();
+        comment.setMessage("m_" + System.currentTimeMillis());
+        post.getComments().add(comment);
+
+        Comment comment2 = new Comment();
+        comment2.setMessage("m_" + System.currentTimeMillis());
+        post.getComments().add(comment2);
+
+        postService.save(post);
+        return post;
     }
 
 }

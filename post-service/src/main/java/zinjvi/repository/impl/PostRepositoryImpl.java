@@ -1,11 +1,13 @@
 package zinjvi.repository.impl;
 
-import com.mongodb.BasicDBList;
-import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import org.springframework.stereotype.Repository;
+import zinjvi.bean.Comment;
 import zinjvi.bean.Post;
 import zinjvi.repository.PostRepository;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by zinchenko on 26.10.14.
@@ -14,24 +16,54 @@ import zinjvi.repository.PostRepository;
 public class PostRepositoryImpl extends BaseMongoRepository<Post, String> implements PostRepository{
 
     @Override
-    protected Post convertToEntity(DBObject dbObject) {
-        Post post = new Post();
-        post.setId((String) dbObject.get(ID_KEY).toString());
-        post.setMessage((String) dbObject.get("message"));
-        return post;
+    protected DBObjectToEntityBuilder getDBObjectToEntityBuilder(DBObject dbObject) {
+        return new DBObjectToEntityBuilder<Post>(dbObject) {
+            @Override
+            public Post build() {
+                entity = new Post();
+                entity.setId((String) dbObject.get(ID_KEY).toString());
+                entity.setMessage((String) dbObject.get("message"));
+                fillComments();
+                return entity;
+            }
+            private void fillComments() {
+                for(DBObject commentDBObject: (List<DBObject>) dbObject.get("comments")) {
+                    Comment comment = new Comment();
+                    comment.setMessage((String) commentDBObject.get("message"));
+                    entity.getComments().add(comment);
+                }
+            }
+        };
     }
 
     @Override
-    protected DBObject convertToDBObject(Post post) {
-        DBObject dbObject = new BasicDBObject();
-        fillId(dbObject, post.getId());
-        dbObject.put("message", post.getMessage());
-        return dbObject;
+    protected EntityToDBObjectBuilder getEntityToDBObjectBuilder(Post entity) {
+        return new EntityToDBObjectBuilder<Post> (entity) {
+        @Override
+        public DBObject build() {
+            return creteDBObjectBuilder()
+                    .putId(entity.getId())
+                    .put("message", entity.getMessage())
+                    .put("comments", createComments())
+                    .build();
+        }
+
+        private List createComments() {
+            List comments = new ArrayList();
+            for (Comment comment: entity.getComments()) {
+                creteDBObjectBuilder()
+                        .put("message", comment.getMessage())
+                        .buildTo(comments);
+            }
+            return comments;
+        }
+        };
     }
 
     @Override
     protected String getCollectionName() {
         return "posts";
     }
+
 
 }
