@@ -9,12 +9,7 @@ import org.springframework.context.annotation.ImportResource;
 /**
  * Created by zinchenko on 25.10.14.
  */
-@ComponentScan(basePackages = {
-//        "/zinjvi/controller",
-//        "/zinjvi/api",
-//        "/zinjvi/repository",
-//        "/zinjvi/service/impl",
-        "/zinjvi"})
+@ComponentScan(basePackages = {"/zinjvi"})
 @EnableAutoConfiguration
 public class Application {
 

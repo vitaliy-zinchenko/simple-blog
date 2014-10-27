@@ -9,7 +9,7 @@ import zinjvi.service.PostService;
 import zinjvi.service.Service;
 
 @RestController
-@RequestMapping("/post")
+@RequestMapping("/api/postapi")
 public class PostApi extends BaseRestController<Post, String> {
 
     PostService postService;
