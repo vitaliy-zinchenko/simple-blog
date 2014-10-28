@@ -10,7 +10,7 @@
     </br>
 </#list>
 
-<div>
+<div>+++
     <form action="/post/createComment" method="POST">
         <input type="hidden" name="postId">
         <input name="message">

@@ -15,10 +15,15 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  */
 @ComponentScan(basePackages = {"/zinjvi"})
 @EnableAutoConfiguration
-public class Application {
+public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
+    }
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(Application.class);
     }
 
 }
@@ -28,7 +33,7 @@ public class Application {
 class XmlImportingConfiguration {
 }
 
-@Configuration
-@EnableWebMvc
-class ServerConfiguration extends WebMvcAutoConfiguration {
-}
+//@Configuration
+//@EnableWebMvc
+//class ServerConfiguration extends WebMvcAutoConfiguration {
+//}
