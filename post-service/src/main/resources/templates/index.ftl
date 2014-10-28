@@ -1,3 +1,6 @@
+<#import "main.ftl" as main/>
+
+<@main.main>
 <#list posts as post>
     ${post.message}:
     <#list post.comments as comment>
@@ -14,3 +17,4 @@
         <input type="submit">
     </form>
 </div>
+</@main.main>

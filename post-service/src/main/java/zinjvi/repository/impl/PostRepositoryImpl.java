@@ -27,7 +27,10 @@ public class PostRepositoryImpl extends BaseMongoRepository<Post, String> implem
                 return entity;
             }
             private void fillComments() {
-                for(DBObject commentDBObject: (List<DBObject>) dbObject.get("comments")) {
+                List<DBObject> dbObjects = (List<DBObject>) dbObject.get("comments");
+                if (dbObjects == null)
+                    return;
+                for(DBObject commentDBObject: dbObjects) {
                     Comment comment = new Comment();
                     comment.setMessage((String) commentDBObject.get("message"));
                     entity.getComments().add(comment);
