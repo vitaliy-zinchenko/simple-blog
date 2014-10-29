@@ -28,15 +28,20 @@ public class PostController {
         return "index";
     }
 
+    @RequestMapping("/test")
+    public String test() {
+        return "test";
+    }
+
     @RequestMapping("/createComment")
     public String create(@ModelAttribute Post post, @ModelAttribute  String postId) {
         postService.save(post);
         return "redirect:/post/index";
     }
 
-    @RequestMapping("/test")
+    @RequestMapping("/testC")
     @ResponseBody
-    public Post test() {
+    public Post testC() {
         Post post = new Post();
         post.setMessage("m_" + System.currentTimeMillis());
 

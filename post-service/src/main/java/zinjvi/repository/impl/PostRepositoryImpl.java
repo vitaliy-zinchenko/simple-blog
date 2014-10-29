@@ -4,6 +4,7 @@ import com.mongodb.DBObject;
 import org.springframework.stereotype.Repository;
 import zinjvi.bean.Comment;
 import zinjvi.bean.Post;
+import zinjvi.bean.gameconfig.Cart;
 import zinjvi.repository.PostRepository;
 
 import java.util.ArrayList;
@@ -67,6 +68,5 @@ public class PostRepositoryImpl extends BaseMongoRepository<Post, String> implem
     protected String getCollectionName() {
         return "posts";
     }
-
 
 }
