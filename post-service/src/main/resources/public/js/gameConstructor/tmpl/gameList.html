@@ -1,0 +1,11 @@
+<div ng-repeat="game in games">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {{game.name}}
+            <div class="btn-group">
+                <a class="btn btn-default" href="#/editGame/{{game.id}}">Edit</a>
+                <a class="btn btn-default">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>

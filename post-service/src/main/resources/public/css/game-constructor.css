@@ -1,0 +1,14 @@
+desktop {
+    display: block;
+}
+
+.game-constructor-content {
+
+}
+
+.card {
+    width: 100px;
+    height: 200px;
+    background-color: #d0e9c6;
+    position: relative;
+}

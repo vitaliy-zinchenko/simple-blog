@@ -13,7 +13,7 @@ import zinjvi.service.Service;
  * Created by zinchenko on 29.10.14.
  */
 @RestController
-@RequestMapping("/api/postapi")
+@RequestMapping("/api/gameConfig")
 public class GameConfigApi extends BaseRestController<GameConfig, String> {
 
     @Autowired

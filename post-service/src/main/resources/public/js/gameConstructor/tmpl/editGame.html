@@ -1,0 +1,19 @@
+<form class="edit-game">
+    <input ng-model="game.name">
+    <button ng-click="save()">Сохранить</button>
+
+    {{card.x}}
+    {{card.y}}
+
+
+    <div desktop ng-drop="true" ng-drag-data="card" ng-drop-success="onDrop($data,$event)" class="desktop" style="background-color: #5464b1; height: 300px">
+        <div ng-drag-data="card" ng-drag="true" class="card">
+            <!--ng-style="{left: card.x, top: card.y}">-->
+
+        </div>
+    </div>
+    <!--<div ng-drop="true" ng-drop-success="onDrop($data,$event)" style="background-color: #67b168; height: 300px">-->
+
+    <!--</div>-->
+</form>
+

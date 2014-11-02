@@ -25,6 +25,7 @@ public class GameConfigRepositoryImpl extends BaseMongoRepository<GameConfig, St
             public GameConfig build() {
                 return new GameConfig()
                         .setId(objectIdToString((ObjectId) dbObject.get(ID_KEY)))
+                        .setName((String) dbObject.get("name"))
                         .setCarts(getCarts());
             }
 
@@ -49,6 +50,7 @@ public class GameConfigRepositoryImpl extends BaseMongoRepository<GameConfig, St
 
                 return new DBObjectBuilder()
                         .putId(entity.getId())
+                        .put("name", entity.getName())
                         .put("carts", getCarts())
                         .build();
             }
@@ -67,7 +69,7 @@ public class GameConfigRepositoryImpl extends BaseMongoRepository<GameConfig, St
 
     @Override
     protected String getCollectionName() {
-        return "gameConfig";
+        return "gameConstructor";
     }
 
     @Override

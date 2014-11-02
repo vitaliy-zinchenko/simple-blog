@@ -1,15 +1,16 @@
 require.config({
     paths: {
-        angular: '/js/lib/angular',
-        angularResource: '/js/lib/angular-resource',
-        angularRoute: '/js/lib/angular-route',
-        jquery: '/js/lib/jquery-1.11.0.min',
-        text: '/js/lib/text',
-        css: '/js/lib/css',
-        common: '/static/web/js/common',
-        underscore: '/underscore'
+        angular: '/js/libs/angular',
+        angularResource: '/js/libs/angular-resource',
+        angularRoute: '/js/libs/angular-route',
+        angularDraggable: '/js/libs/ngDraggable',
+        jquery: '/js/libs/jquery-1.11.0.min',
+        text: '/js/libs/text',
+        css: '/js/libs/css',
+        common: '/js/common',
+        underscore: 'js/libs/underscore'
     },
-    baseUrl: '/static/web/js/feedback/site',
+    baseUrl: '/js/gameConstructor',
     shim: {
         angular: {'exports': 'angular'},
         angularResource: {
