@@ -1,7 +1,5 @@
 package zinjvi;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
@@ -87,7 +85,7 @@ public class FM {
 //            environment.
 
 
-            environment.getDataModel().
+//            environment.getDataModel().
 
             String templateName = (String) map.get("template").toString();
 
@@ -99,7 +97,15 @@ public class FM {
                 StringWriter stringWriter = new StringWriter();
 //                stringWriter.append((CharSequence) MAP.get(templateName));
 
-                templateDirectiveBody.render(stringWriter);
+                //templateDirectiveBody.render(stringWriter);
+
+                Configuration configuration = new Configuration();
+                configuration.setClassForTemplateLoading(FM.class, "");
+                Template template = configuration.getTemplate("d.ftl");
+                Map map1 = new HashMap();
+                Writer out = new OutputStreamWriter(System.out);
+                template.process(map1, out);
+
 
                 String rendered = stringWriter.toString();
 

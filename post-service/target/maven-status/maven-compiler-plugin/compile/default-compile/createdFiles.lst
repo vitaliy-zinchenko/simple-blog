@@ -1,0 +1,12 @@
+zinjvi/repository/impl/PostRepositoryImpl$2.class
+zinjvi/api/PostApi.class
+zinjvi/Application.class
+zinjvi/XmlImportingConfiguration.class
+zinjvi/service/impl/PostServiceImpl.class
+zinjvi/repository/impl/PostRepositoryImpl.class
+zinjvi/bean/Comment.class
+zinjvi/service/PostService.class
+zinjvi/controller/PostController.class
+zinjvi/repository/impl/PostRepositoryImpl$1.class
+zinjvi/repository/PostRepository.class
+zinjvi/bean/Post.class

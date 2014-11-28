@@ -52,9 +52,3 @@ class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
     }
 
 }
-
-
-//@Configuration
-//@EnableWebMvc
-//class ServerConfiguration extends WebMvcAutoConfiguration {
-//}
